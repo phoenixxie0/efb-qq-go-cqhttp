@@ -16,6 +16,7 @@ RUN set -ex \
                 lcms2 \
                 openjpeg  \
                 openblas \
+                python3-dev python3-pip python3-venv python3-wheel \
                 py3-olefile py3-numpy py3-pillow py3-requests py3-pip py3-cryptography py3-decorator \
                 git \
                 zlib-dev \
