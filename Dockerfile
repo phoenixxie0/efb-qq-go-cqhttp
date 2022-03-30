@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.14
 MAINTAINER Phoenix <hkxseven007@gmail.com>
 
 ENV LANG C.UTF-8
