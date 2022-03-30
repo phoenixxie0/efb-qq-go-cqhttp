@@ -20,8 +20,8 @@ RUN set -ex \
                 py3-olefile py3-numpy py3-pillow py3-requests py3-pip py3-cryptography py3-decorator \
                 git \
                 zlib-dev \
-                gcc \
-                #cairo \
+                #gcc \
+                cairo \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone
 
