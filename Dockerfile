@@ -28,22 +28,22 @@ RUN set -ex \
         && pip3 install --upgrade pip \
         && pip3 install wheel six ehforwarderbot \
         #&& pip3 install git+https://github.com/ehForwarderBot/ehForwarderBot \
-        && pip3 install git+https://github.com/ehForwarderBot/efb-telegram-master \
+        #&& pip3 install git+https://github.com/ehForwarderBot/efb-telegram-master \
         #&& pip3 install git+https://github.com/ehForwarderBot/efb-wechat-slave \
-        &&pip install -U git+https://github.com/tedrolin/python-wechatPc \
-        &&pip install -U git+https://github.com/tedrolin/efb-wechat-pc-slave \
-        && pip3 install lottie \
+        #&&pip install -U git+https://github.com/tedrolin/python-wechatPc \
+       # &&pip install -U git+https://github.com/tedrolin/efb-wechat-pc-slave \
+        #&& pip3 install lottie \
         #&& pip3 install cairosvg \
         #&& sed -i 's/channel_emoji = "💬"/channel_emoji = "𝙒𝙚𝙘𝙝𝙖𝙩"/g' /usr/lib/python3.*/site-packages/efb_wechat_slave/__init__.py \
-        && sed -i "s/{self.chat_type_emoji}/丨/g" /usr/lib/python3.*/site-packages/efb_telegram_master/chat.py \
-        && pip3 install git+https://github.com/ehForwarderBot/efb-mp-instantview-middleware \
-        && pip3 install git+https://github.com/ehForwarderBot/efb-link_preview-middleware \
-        && pip3 install git+https://github.com/ehForwarderBot/efb-voice_recog-middleware \
-        && pip3 install git+https://github.com/ehForwarderBot/efb-msg_blocker-middleware \
-        && pip3 install git+https://github.com/ehForwarderBot/efb-patch-middleware \
+        #&& sed -i "s/{self.chat_type_emoji}/丨/g" /usr/lib/python3.*/site-packages/efb_telegram_master/chat.py \
+        #&& pip3 install git+https://github.com/ehForwarderBot/efb-mp-instantview-middleware \
+        #&& pip3 install git+https://github.com/ehForwarderBot/efb-link_preview-middleware \
+        #&& pip3 install git+https://github.com/ehForwarderBot/efb-voice_recog-middleware \
+        #&& pip3 install git+https://github.com/ehForwarderBot/efb-msg_blocker-middleware \
+        #&& pip3 install git+https://github.com/ehForwarderBot/efb-patch-middleware \
         #&& pip3 install git+https://github.com/zhangzhishan/efb-filter-middleware \
-        && pip3 install git+https://github.com/ahxxm/efb-filter-middleware \
-        && pip3 install python-telegram-bot[socks] \
+        #&& pip3 install git+https://github.com/ahxxm/efb-filter-middleware \
+        #&& pip3 install python-telegram-bot[socks] \
         && rm -rf ~/.cache
 
 CMD ["ehforwarderbot"]
