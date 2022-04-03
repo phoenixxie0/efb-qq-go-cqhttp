@@ -6,7 +6,7 @@ ENV TZ 'Asia/Shanghai'
 
 RUN set -ex \
         && apk add --no-cache udns \
-        && apk add --no-cache --virtual .run-deps \
+        && apk add --no-cache --virtual \
                 ca-certificates tzdata build add sed build-base \
                 ffmpeg \
                 libmagic \
