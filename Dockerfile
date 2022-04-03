@@ -26,8 +26,9 @@ RUN set -ex \
         && echo "Asia/Shanghai" > /etc/timezone
 
 RUN set -ex \
-        #&& pip3 install --upgrade pip \
+        && pip3 install --upgrade pip \
         && pip3 install ez_setup \
+        && pip3 install --upgrade setuptools \
         && pip3 install ehforwarderbot \
         #&& pip3 install git+https://github.com/ehForwarderBot/ehForwarderBot \
         #&& pip3 install git+https://github.com/ehForwarderBot/efb-telegram-master \
