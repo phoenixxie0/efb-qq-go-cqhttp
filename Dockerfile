@@ -6,8 +6,8 @@ ENV TZ 'Asia/Shanghai'
 
 RUN set -ex \
         && apk add --no-cache udns \
-        && apk add --no-cache --virtual .run-deps ca-certificates sed build-base libffi-dev openssl-dev git tiff freetype lcms2 \
-        && apk add --no-cache tzdata openjpeg zlib-dev libmagic libwebp-dev ffmpeg cairo \
+        && apk add --no-cache --virtual .run-deps sed build-base libffi-dev openssl-dev git \
+        && apk add --no-cache tzdata openjpeg zlib-dev libmagic libwebp-dev ffmpeg cairo tiff freetype lcms2 \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone
 
