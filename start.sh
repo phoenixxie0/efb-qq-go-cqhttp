@@ -12,4 +12,5 @@ fi
 cd /root/mcl 
 nohup ./mcl &>/dev/null &
 echo -e "mcl启动完成...\n"
+sleep 20
 ehforwarderbot
