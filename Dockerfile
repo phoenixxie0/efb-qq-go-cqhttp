@@ -14,18 +14,13 @@ RUN set -ex \
         && pip3 install --upgrade setuptools \
         && pip3 install git+https://github.com/ehForwarderBot/ehForwarderBot \
         && pip3 install git+https://github.com/ehForwarderBot/efb-telegram-master \
-        && pip3 install -U git+https://github.com/milkice233/efb-qq-slave \
+        && pip3 install git+https://github.com/milkice233/efb-qq-slave \
         && pip3 install git+https://github.com/milkice233/efb-qq-plugin-mirai \
-        && pip3 install python-telegram-bot[socks] 
-
-RUN set -ex \
-        && mkdir -p ~/mcl \
-        && cd ~/mcl \
-        && wget https://github.com/iTXTech/mirai-console-loader/releases/download/v2.1.0/mcl-2.1.0.zip \
-        && unzip mcl-2.1.0.zip \
-        && chmod +x mcl \
-        && ./mcl --update-package net.mamoe:mirai-api-http --channel stable-v2 --type plugin \
+        && pip3 install git+https://github.com/xzsk2/efb-filter-middleware \
+        && pip3 install python-telegram-bot[socks] \
         && apk del .build-deps \
-        && rm -rf ~/.cache
-
-CMD ["ehforwarderbot"]
+        && rm -rf ~/.cache \
+        && wget https://raw.githubusercontent.com/phoenixxie0/efb-qq-docker/main/start.sh -O /start.sh \
+        && chmod +x /start.sh 
+        
+CMD ["/start.sh"]
