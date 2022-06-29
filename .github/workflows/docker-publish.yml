@@ -32,7 +32,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: phoenixxie/ews-wine
+          images: phoenixxie/efb-qq-docker
           tags: latest
 
       - name: Build and push Docker image
