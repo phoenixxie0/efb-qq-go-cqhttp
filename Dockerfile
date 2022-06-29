@@ -18,6 +18,7 @@ RUN set -ex \
         && pip3 install git+https://github.com/ehForwarderBot/ehForwarderBot \
         && pip3 install git+https://github.com/ehForwarderBot/efb-telegram-master \
         && pip3 install -U git+https://github.com/milkice233/efb-qq-slave \
+        && pip3 install git+https://github.com/milkice233/efb-qq-plugin-mirai
         && sed -i "s/{self.chat_type_emoji}/丨/g" /usr/lib/python3.*/site-packages/efb_telegram_master/chat.py \
         && pip3 install python-telegram-bot[socks] 
 
