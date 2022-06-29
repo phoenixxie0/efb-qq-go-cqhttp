@@ -1,13 +1,13 @@
-FROM python:alpine
+FROM alpine:latest
 MAINTAINER Phoenix <hkxseven007@gmail.com>
 
 ENV LANG C.UTF-8
 ENV TZ 'Asia/Shanghai'
 
 RUN set -ex \
-        && apk add --no-cache udns \
-        && apk add --no-cache --virtual .run-deps sed build-base libffi-dev openssl-dev git \
-        && apk add --no-cache tzdata openjpeg zlib-dev libmagic libwebp-dev ffmpeg cairo \
+        && apk add --no-cache --virtual .build-deps sed build-base libffi-dev openssl-dev python3-dev git \
+        && apk add --no-cache tzdata ca-certificates ffmpeg libmagic openjpeg zlib-dev libwebp \
+                python3 py3-olefile py3-numpy py3-pillow py3-pip py3-cryptography py3-decorator \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone
 
@@ -17,21 +17,12 @@ RUN set -ex \
         #&& pip3 install ehforwarderbot \
         && pip3 install git+https://github.com/ehForwarderBot/ehForwarderBot \
         && pip3 install git+https://github.com/ehForwarderBot/efb-telegram-master \
-        && pip3 install -U git+https://github.com/tedrolin/python-wechatPc \
-        #&& pip install -U https://github.com/Tedrolin/efb-wechat-pc-slave \
-        && pip3 install -U git+https://github.com/tom-snow/efb-wechat-pc-slave \
+        && pip3 install -U git+https://github.com/milkice233/efb-qq-slave \
         && pip3 install lottie \
         && pip3 install cairosvg \
-        && sed -i 's/channel_emoji: str = "💬🖥️"/channel_emoji: str = "𝙒𝙚𝙘𝙝𝙖𝙩"/g' /usr/local/lib/python3.*/site-packages/efb_wechat_pc_slave/__init__.py \
         && sed -i "s/{self.chat_type_emoji}/丨/g" /usr/local/lib/python3.*/site-packages/efb_telegram_master/chat.py \
-        && pip3 install git+https://github.com/ehForwarderBot/efb-mp-instantview-middleware \
-        #&& pip3 install git+https://github.com/ehForwarderBot/efb-link_preview-middleware \
-        #&& pip3 install git+https://github.com/ehForwarderBot/efb-voice_recog-middleware \
-        && pip3 install git+https://github.com/ehForwarderBot/efb-msg_blocker-middleware \
-        #&& pip3 install git+https://github.com/ehForwarderBot/efb-patch-middleware \
-        && pip3 install git+https://github.com/ahxxm/efb-filter-middleware \
         && pip3 install python-telegram-bot[socks] \
-        && rm -rf ~/.cache \
-        && apk del .run-deps
+        && apk del .build-deps \
+        && rm -rf ~/.cache
 
 CMD ["ehforwarderbot"]
