@@ -1,5 +1,5 @@
 #!/bin/sh 
-if [ ! -d "/root/mcl" ]; then
+if [ ! -d "/root/mcl/mcl" ]; then
   mkdir -p /root/mcl
   cd /root/mcl 
   wget https://github.com/iTXTech/mirai-console-loader/releases/download/v2.1.0/mcl-2.1.0.zip 
