@@ -40,11 +40,13 @@ TG搜索botfather，认准官方账号
 
 即可创建新机器人
 按照指示取名字，就好像你的QQ昵称可以随时修改。
+
 ![image](https://user-images.githubusercontent.com/50565072/177001870-21fea189-8f99-4241-bc94-4a07bc5a5b18.png)
 
 按照指示取机器人号，类似你的QQ号，必须用bot结尾，不可修改。
 
 创建成功会收到这样一条信息：
+
 ![image](https://user-images.githubusercontent.com/50565072/177001884-343cd9de-3ea4-46e5-af3e-7c12002b37b7.png)
 
 第二处马赛克部分就是我们需要的bot token，这个请保存好，注意不要泄露。
@@ -83,6 +85,7 @@ extra - 掉线重新登录或强制刷新对话列表
 
 ## 3.获取UID
 （1）如果你是plus messager用户，直接点开设置，在个人资料卡就能直接看到id。
+
 （2）常规获取方法：搜索@get_id_bot ，输入/start，就能获得你的ID
 
 
@@ -223,27 +226,32 @@ cd /root/mcl
 
 ## 3.登录账号
 根据页面提示进行登录账号的设置。有什么不懂的输入 ？ ，查看提示。
+
 ```
 #登录设备可以在<ANDROID_PHONE, ANDROID_PAD, ANDROID_WATCH 三选一>
-login QQ号 QQ密码 ANDROID_PAD  #登录命令，可修改登录设备
+/login QQ号 QQ密码 ANDROID_PAD  #登录命令，可修改登录设备
 #下面两条命令如果需要设置自动登录，都要输
 /autoLogin add  QQ号 QQ密码
 /autoLogin setConfig QQ号 protocol ANDROID_PAD  #可修改登录设备
 ```
-运行./mcl -u登录QQ号会提示需要滑块验证，然而TxCaptchaHelper不能用，请移步参考链接6中的方法2。照做。通过滑块后在mcl回输需要的参数，会产生一个网址，浏览器打开需要使用手机QQ扫码。扫码成功后输入任意字符进行登录，手机会提示QQHD版已登录。
+运行./mcl -u登录QQ号会提示需要滑块验证，然而TxCaptchaHelper不能用，请移步[滑块验证解决方案](https://github.com/project-mirai/mirai-login-solver-selenium)中的方法2。照做。通过滑块后在mcl回输需要的参数，会产生一个网址，浏览器打开需要使用手机QQ扫码。扫码成功后输入任意字符进行登录，手机会提示QQHD版已登录。
 
 
 注意事项：
+
 1.不要偷懒，必须是安卓手机&windows版的chrome，不要试图用任何的非官方版本蒙混过关！
+
 2.打开inspect后弹出来的devtools为空白或者404，并且你遵照了注意事项1，请全局科学上网试试。
+
 3.验证码地址在此处
-![image](https://user-images.githubusercontent.com/50565072/177002441-f6a5f5cb-f2b7-4336-a9cf-26656e29d194.png)
+![image](https://user-images.githubusercontent.com/50565072/177025756-82d104d5-1c6e-4304-8105-9528959562bd.png)
 
 # 五、登录后玩法
 ## 1.分组
 登录后机器人会开始帮你接收信息，然而不管是群组还是私聊，都会推送信息到这一个机器人，信息非常繁杂，不利于辨认，所以很有必要进行分组。
 ###### （1）创建群组
-![image](https://user-images.githubusercontent.com/50565072/177002469-2fb08d58-25ea-44f3-a00d-4a31480874a2.png)
+
+![image](https://user-images.githubusercontent.com/50565072/177025778-080408a1-2922-46d6-9923-e4b0159c4a83.png)
 
 
 群组名字设置：如果是单个私聊或者单个群聊，随便设置一个名字，之后可以通过机器人命令同步信息，不用自己挨个设置。如果是想归类，一个群组关联很多聊天对话，就按需设置。例如：“游戏”、“同事”。
@@ -254,7 +262,9 @@ login QQ号 QQ密码 ANDROID_PAD  #登录命令，可修改登录设备
 在机器人对话界面操作：
 可以针对已经给你发送信息的账户，直接左滑回复，输入/link，发送，选择link，然后选择你创建好的群组即可。
 一个群组可以link多个微信账户，达到分组功能。
-![image](https://user-images.githubusercontent.com/50565072/177002604-a5c84bdf-97f2-4a5e-b6c1-c53c501c762b.png)
+
+![image](https://user-images.githubusercontent.com/50565072/177025791-6439baa6-4e5f-4b00-afb4-97b9b30ed5cf.png)
+
 
 ###### （3）更新群组信息
 当你的群组只绑定了一个微信私聊或者群组时，可以在群组中输入/update_info，即可自动同步QQ头像、昵称、群组成员（在简介中）。这项功能需要给机器人管理员权限。
