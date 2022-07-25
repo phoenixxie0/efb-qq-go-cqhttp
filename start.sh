@@ -1,17 +1,16 @@
 #!/bin/sh 
-if [ ! -f "/root/mcl/mcl" ]; then
-  mkdir -p /root/mcl
-  cd /root/mcl 
-  wget https://github.com/iTXTech/mirai-console-loader/releases/download/v2.1.0/mcl-2.1.0.zip 
-  unzip mcl-2.1.0.zip 
-  chmod +x mcl 
-  ./mcl --update-package net.mamoe:mirai-api-http --channel stable-v2 --type plugin 
-  echo -e "mcl安装完成...\n"
+if [ ! -f "/root/go-cqhttp/go-cqhttp" ]; then
+  mkdir -p /root/go-cqhttp
+  cd /root/go-cqhttp 
+  wget https://github.com/Mrs4s/go-cqhttp/releases/download/v1.0.0-rc3/go-cqhttp_linux_amd64.tar.gz 
+  tar -xvf go-cqhttp_linux_amd64.tar.gz 
+  chmod +x go-cqhttp 
+  echo -e "go-cqhttp安装完成...\n"
 fi
 
-cd /root/mcl 
-nohup ./mcl &>/dev/null &
-echo -e "mcl启动完成...\n"
+cd /root/go-cqhttp 
+nohup ./go-cqhttp &>/dev/null &
+echo -e "go-cqhttp启动完成...\n"
 sleep 20
 ehforwarderbot &
 sh
