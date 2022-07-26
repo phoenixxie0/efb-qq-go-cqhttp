@@ -32,7 +32,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: phoenixxie/efb-qq-mirai
+          images: phoenixxie/efb-qq-go-cqhttp
           tags: latest
 
       - name: Build and push Docker image
