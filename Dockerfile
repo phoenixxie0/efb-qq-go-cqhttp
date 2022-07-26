@@ -6,7 +6,7 @@ ENV TZ 'Asia/Shanghai'
 
 RUN set -ex \
         && apk add --no-cache --virtual .build-deps sed build-base libffi-dev openssl-dev git \
-        && apk add --no-cache tzdata ca-certificates ffmpeg libmagic openjpeg zlib-dev libwebp \
+        && apk add --no-cache tzdata ca-certificates ffmpeg libmagic openjpeg zlib-dev libwebp jpeg-dev\
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone
 
