@@ -252,15 +252,34 @@ cd /root/go-cqhttp
 
 1.如果端口冲突需要对几个配置文件均进行相应修改。
 
-2.若docker的宿主机和手机不处于同一个局域网，密码留空的扫码登录会失败。若非要坚持扫码登录，解决办法请在互联网自行检索关键字。例图是先尝试扫码登陆失败后选择直接输入密码。
+
+2.关于滑条验证码登录：
+
+该登录方式为默认选择，但近期出现了登陆失败的问题。如果你出现了图中的提示，请选择扫码登录。
+
+![image](https://user-images.githubusercontent.com/50565072/207818823-626c0d0f-e38e-4a0f-999d-1f83ceaeb295.png)
+
+3.关于扫码登录：需要手动选择登录方式为扫码登录。
+
+若docker的宿主机和手机不处于同一个局域网，密码留空的扫码登录会失败。
 
 
 ![Snipaste_2022-09-26_16-37-28](https://user-images.githubusercontent.com/50565072/192487005-5f7978ad-da88-45bb-a8d0-92f6d6a9f96f.png)
 
+若扫码登录遇到提示：当前设备网络不稳定或处于复杂网络环境，为了你的帐号安全，建议将两个设备连接同一网络或将被扫描设备连接你的手机热点后，重新扫码登录。
 
-![Snipaste_2022-09-26_16-54-46](https://user-images.githubusercontent.com/50565072/192487475-4f3ee920-6854-4cf8-bb1c-f41013a37649.png)
+![image](https://img-blog.csdnimg.cn/cd4bdb954093417facb8a16fe5937590.png)
 
-3.如果中途退出了，再进go-cqhttp出现被占用提示，不用反复删除登陆文件，用下面的代码。
+可以首先查看[对应issue](https://github.com/Mrs4s/go-cqhttp/issues/1469) ，里面提到包括：手机连接服务器的代理进行扫码、使用爱加速等app挂到服务器所在城市……可以自行尝试。
+
+本人提供的解决方法是：
+
+（1）有条件的进行局域网扫码，最简单粗暴。
+
+（2）没有条件的在windows环境登录go-cqhttp，在[go-cqhttp的release界面](https://github.com/Mrs4s/go-cqhttp/releases/)选择windows对应客户端下载并打开。按照前面的配置文件写好config.yaml，进行登录。复制电脑文件夹里面的device.json、session.token到服务器go-cqhttp所在文件夹。
+
+
+4.如果中途退出了，再进go-cqhttp出现被占用提示，不用反复删除登陆文件，用下面的代码。
 
 ![Snipaste_2022-09-26_18-14-23](https://user-images.githubusercontent.com/50565072/192490691-85fbb850-976c-4b02-a502-9ed8fe9e53b3.png)
 
@@ -269,7 +288,7 @@ kill -9 $( ps -e|grep go-cqhttp |awk '{print $1}')
 ./go-cqhttp
 ```
 
-4.若确定配置文件和端口没有任何的错误，但登陆时go-cqhttp反复出现如下错误
+5.若确定配置文件和端口没有任何的错误，但登陆时go-cqhttp反复出现如下错误
 
 ```
 [2022-09-26 18:29:00] [WARNING]: 上报 Event 数据到 http://127.0.0.1:8000 失败: Post "http://127.0.0.1:8000": dial tcp 127.0.0.1:8000: connect: connection refused 将进行第 1 次重试 
