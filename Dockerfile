@@ -9,7 +9,7 @@ RUN set -ex \
 
 RUN set -ex \
         && apk add --no-cache tzdata ca-certificates ffmpeg libmagic openjpeg zlib-dev libwebp \
-        && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+        && ln -sf $(echo /usr/share/zoneinfo/${TZ}) /etc/localtime \
         && echo ${TZ} > /etc/timezone
 
 RUN set -ex \
