@@ -12,7 +12,7 @@ RUN set -ex \
 
 RUN set -ex \
         #&& pip3 install --upgrade setuptools \
-        && pip3 install git+https://github.com/ehForwarderBot/ehForwarderBot \
+        && pip3 install git+https://github.com/ehForwarderBot/ehForwarderBot@832997a38fb795f5135ae7f5f261f3bebb9ad943 \
         && pip3 install git+https://github.com/ehForwarderBot/efb-telegram-master \
         && pip3 install git+https://github.com/phoenixxie0/efb-qq-plugin-go-cqhttp \
         #&& pip3 install git+https://github.com/milkice233/efb-qq-slave \
