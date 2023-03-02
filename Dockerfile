@@ -1,4 +1,4 @@
-FROM python:3.8.13-alpine3.16
+FROM python:3.8-alpine
 MAINTAINER Phoenix <hkxseven007@gmail.com>
 
 ENV LANG C.UTF-8
