@@ -2,7 +2,7 @@
 if [ ! -f "/root/go-cqhttp/go-cqhttp" ]; then
   mkdir -p /root/go-cqhttp
   cd /root/go-cqhttp 
-  wget https://github.com/Mrs4s/go-cqhttp/releases/download/v1.0.0-rc4/go-cqhttp_linux_amd64.tar.gz
+  wget https://github.com/Mrs4s/go-cqhttp/releases/download/v1.0.0-rc5/go-cqhttp_linux_amd64.tar.gz
   tar -xvf go-cqhttp_linux_amd64.tar.gz 
   chmod +x go-cqhttp 
   echo -e "go-cqhttp安装完成...\n"
