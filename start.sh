@@ -11,6 +11,6 @@ fi
 cd /root/go-cqhttp 
 nohup ./go-cqhttp &>/dev/null &
 echo -e "go-cqhttp启动完成...\n"
-sleep 20
+sleep 60
 ehforwarderbot &
 sh
